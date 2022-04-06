@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:cardElevation="4dp"
+    app:cardCornerRadius="4dp"
+    app:contentPadding="8dp"
+    app:cardUseCompatPadding="true"
+    android:backgroundTint="#B6B6B5"
+    android:layout_width="match_parent"
+    android:layout_margin="4dp"
+    android:layout_height="wrap_content"
+    android:id="@+id/id_Detail">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="136dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="124dp"
+            android:layout_marginBottom="129dp"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_judul"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"  android:layout_width="wrap_content"/>
+
+        <TextView
+            android:id="@+id/jdl_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Judul :"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_judul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintStart_toEndOf="@id/jdl_judul"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/labelSinopsis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sinopsis :"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/jdl_judul" />
+
+        <TextView
+            android:id="@+id/tv_sinopsis"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/labelSinopsis"
+            app:layout_constraintStart_toEndOf="@id/labelSinopsis"
+            app:layout_constraintTop_toTopOf="@id/labelSinopsis"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/labelDurasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Durasi :"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sinopsis" />
+
+        <TextView
+            android:id="@+id/tv_durasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="@id/labelDurasi"
+            app:layout_constraintStart_toEndOf="@id/labelDurasi"
+            app:layout_constraintTop_toTopOf="@id/labelDurasi" />
+
+        <TextView
+            android:id="@+id/labelTahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tahun :"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelDurasi"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/tv_tahun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/labelTahun"
+            app:layout_constraintStart_toEndOf="@id/labelTahun"
+            app:layout_constraintTop_toTopOf="@id/labelTahun" />
+
+        <TextView
+            android:id="@+id/labelRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating :"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelTahun"
+            tools:layout_editor_absoluteX="123dp"
+            tools:layout_editor_absoluteY="82dp" />
+
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="-"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/labelRating"
+            app:layout_constraintStart_toEndOf="@id/labelRating"
+            app:layout_constraintTop_toTopOf="@id/labelRating" />
+
+        <ImageView
+            android:id="@+id/ivDelete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
