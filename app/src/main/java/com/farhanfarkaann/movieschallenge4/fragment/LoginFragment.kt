@@ -53,21 +53,33 @@ class LoginFragment : Fragment() {
 
 
         binding.btnLogin.setOnClickListener {
-            val email : String = binding.etEmail.text.toString()
-            val password : String  = binding.etPassword.text.toString()
-            val checked : Boolean = binding.checkbox.isChecked
-            val editor : SharedPreferences.Editor = prefFile.edit()
+            val email: String = binding.etEmail.text.toString()
+            val password: String = binding.etPassword.text.toString()
+            val checked: Boolean = binding.checkbox.isChecked
+            val editor: SharedPreferences.Editor = prefFile.edit()
             editor.putBoolean("CHECKBOX", checked)
             editor.apply()
-            when { email2 != email -> {
-                binding.tfEmail.error = "Email tidak Terdaftar."
-            }
-                pass2 != password -> {
-                    binding.tfPassword.error = "Password  yang anda masukan salah."
-                }
-                else -> {
-                    Toast.makeText(context, "Selamat Datang $username", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+            if (email.isEmpty() && password.isEmpty()) {
+                Toast.makeText(context, "Tidak Boleh Kosong", Toast.LENGTH_SHORT).show()
+
+            } else {
+                when {
+                    email2 != email -> {
+                        binding.tfEmail.error = "Email tidak Terdaftar."
+                    }
+                    pass2 != password -> {
+                        binding.tfPassword.error = "Password  yang anda masukan salah."
+                    }
+//                email.isEmpty() -> {
+//                Toast.makeText(context, "Harap Masukan Email", Toast.LENGTH_SHORT).show()
+//                } password.isEmpty() ->{
+//                Toast.makeText(context, "Harap Masukan Password", Toast.LENGTH_SHORT).show()
+//                }
+                    else -> {
+                        Toast.makeText(context, "Selamat Datang $username", Toast.LENGTH_SHORT)
+                            .show()
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    }
                 }
             }
         }

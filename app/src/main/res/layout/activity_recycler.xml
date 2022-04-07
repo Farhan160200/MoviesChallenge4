@@ -5,6 +5,7 @@
     app:cardElevation="4dp"
     app:cardCornerRadius="4dp"
     app:contentPadding="8dp"
+    android:alpha="4.75"
     app:cardUseCompatPadding="true"
     app:cardBackgroundColor="#00ffffff"
     android:layout_width="match_parent"
@@ -13,6 +14,8 @@
     android:id="@+id/id_Detail">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/white"
+        android:alpha="0.85"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -38,6 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Judul      :"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
             android:textSize="16sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -49,20 +54,23 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="-"
+            android:fontFamily="sans-serif-condensed"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@id/jdl_judul"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/labelSinopsis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sinopsis :"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/jdl_judul" />
+            <TextView
+                android:id="@+id/labelSinopsis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sinopsis :"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/jdl_judul" />
 
         <TextView
             android:id="@+id/tv_sinopsis"
@@ -71,6 +79,8 @@
             android:layout_marginStart="8dp"
             android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd"
             android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/labelSinopsis"
             app:layout_constraintStart_toEndOf="@id/labelSinopsis"
@@ -82,6 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Durasi     :"
+            android:fontFamily="sans-serif-condensed"
             android:textSize="16sp"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -93,6 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="-"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/labelDurasi"
@@ -105,6 +117,7 @@
             android:layout_height="wrap_content"
             android:text="Tahun      :"
             android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/labelDurasi"
@@ -116,6 +129,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="-"
+            android:fontFamily="sans-serif-condensed"
             android:textSize="16sp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/labelTahun"
@@ -128,6 +142,7 @@
             android:layout_height="wrap_content"
             android:text="Rating      :"
             android:textSize="16sp"
+            android:fontFamily="sans-serif-condensed"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/labelTahun"
@@ -140,6 +155,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="-"
+            android:fontFamily="sans-serif-condensed"
             android:textSize="16sp"
             android:textColor="@color/black"
             app:layout_constraintBottom_toBottomOf="@id/labelRating"
@@ -150,7 +166,7 @@
             android:id="@+id/ivDelete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_delete"
+            android:src="@drawable/ic_add_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -158,7 +174,7 @@
             android:id="@+id/ivEdit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_edit"
+            android:src="@drawable/ic_edit_ic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

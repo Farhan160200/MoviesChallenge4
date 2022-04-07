@@ -6,16 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".fragment.RegistFragment">
 
+    <TextView
+        android:id="@+id/tv_idlik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
+        android:text="IDLIK"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="50dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="160dp"
         android:layout_height="160dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_undraw_working_late_pukg"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.541"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_idlik" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="2dp"
+        android:text="SIGN UP!"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tf_username"
+        app:layout_constraintEnd_toStartOf="@+id/iv_logo"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tf_username"
@@ -23,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="10dp"
         android:hint="Masukan Username"
@@ -113,7 +143,7 @@
         android:id="@+id/btn_daftar"
         android:layout_width="308dp"
         android:layout_height="46dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="28dp"
         android:text="Daftar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
