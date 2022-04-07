@@ -27,27 +27,20 @@ class MoviesAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemViewBinding.apply {
             tvJudul.text = listMovies[position].judul
-            tvDurasi.text = listMovies[position].durasi.toString()
+            tvDurasi.text = listMovies[position].durasi.toString() + " Menit"
             tvSinopsis.text = listMovies[position].sinopsis
             tvTahun.text = listMovies[position].tahun.toString()
-            tvRating.text = listMovies[position].rating.toString()
+            tvRating.text = listMovies[position].rating.toString() + " IMDb"
 
 
             ivEdit.setOnClickListener {
                 update.invoke(listMovies[position])
-//                val intentKe = Intent(it.context,RecyclerView::javaClass)
-//                val intentKeEditActivity = Intent(it.context,HomeFragment::class.java)
-//                intentKeEditActivity.putExtra("movies", listMovies[position])
-//                it.context.startActivity(intentKeEditActivity)
 
             }
+
             ivDelete.setOnClickListener{
                 delete.invoke(listMovies[position])
             }
-//            idDetail.setOnClickListener{
-//                detail.invoke(listMovies[position])
-//            }
-
 
 //            ivDelete.setOnClickListener {
 //                AlertDialog.Builder(it.context).setPositiveButton("Ya") { p0, p1 ->

@@ -191,12 +191,13 @@ class HomeFragment : Fragment() {
                             dialogBinding.btnSave.setOnClickListener {
                                 val mDb = MoviesDatabase.getInstance(requireContext())
                                 val objectMovies = MoviesData(
-                                     dialogBinding.tvId.text.toString().toInt(),
+
+                                    dialogBinding.tvId.text.toString().toInt(),
                                     dialogBinding.etJudul.text.toString(),
-                                            dialogBinding.etDurasi.text.toString().toInt(),
-                                            dialogBinding.etSinopsis.text.toString(),
-                                            dialogBinding.etTahun.text.toString().toInt(),
-                                            dialogBinding.etRating.text.toString().toDouble(),
+                                    dialogBinding.etDurasi.text.toString().toInt(),
+                                    dialogBinding.etSinopsis.text.toString(),
+                                    dialogBinding.etTahun.text.toString().toInt(),
+                                    dialogBinding.etRating.text.toString().toDouble(),
                                 )
                                 lifecycleScope.launch(Dispatchers.IO){
                                     val result = mDb?.moviesDao()?.updateStudent(objectMovies!!)
