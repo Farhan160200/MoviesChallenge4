@@ -2,4 +2,31 @@
     <string name="app_name">Movies Challenge 4</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="judul_film1">Judul Film</string>
+    <string name="durasi_film1">Durasi Film</string>
+    <string name="sinopsis_film1">Sinopsis Film</string>
+    <string name="tahun_film1">Tahun Film</string>
+    <string name="rating1">Rating</string>
+    <string name="save1">SAVE</string>
+    <string name="cancel1">Cancel</string>
+    <string name="update_film">Update FIlm</string>
+    <string name="judul_film">Judul Film</string>
+    <string name="durasi_film">Durasi Film</string>
+    <string name="sinopsis_film">Sinopsis Film</string>
+    <string name="tahun_film">Tahun Film</string>
+    <string name="rating">Rating</string>
+    <string name="save">SAVE</string>
+    <string name="cancel">Cancel</string>
+    <string name="judul">Judul :</string>
+    <string name="strip">-</string>
+    <string name="sinopsis">Sinopsis :</string>
+    <string name="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd</string>
+    <string name="durasi">Durasi :</string>
+    <string name="tahun">Tahun :</string>
+    <string name="strip2">-</string>
+    <string name="rating2">Rating :</string>
+    <string name="strip3">-</string>
+    <string name="welcome">welcome,</string>
+    <string name="username">USERNAME</string>
+    <string name="logout">LOGOUT</string>
 </resources>

@@ -41,39 +41,6 @@ class MoviesAdapter(
             ivDelete.setOnClickListener{
                 delete.invoke(listMovies[position])
             }
-
-//            ivDelete.setOnClickListener {
-//                AlertDialog.Builder(it.context).setPositiveButton("Ya") { p0, p1 ->
-//                    val mDb = MoviesDatabase.getInstance(holder.itemView.context)
-//
-//                    GlobalScope.async {
-//                        val result = mDb?.moviesDao()?.deleteStudent(listMovies[position])
-//
-//                        (holder.itemView.context as HomeFragment).run{
-//                            if (result != 0) {
-//                                Toast.makeText(
-//                                    it.context,
-//                                    "Data ${listMovies[position].judul} berhasil dihapus",
-//                                    Toast.LENGTH_LONG
-//                                ).show()
-//                            } else {
-//                                Toast.makeText(
-//                                    it.context,
-//                                    "Data ${listMovies[position].judul} Gagal dihapus",
-//                                    Toast.LENGTH_LONG
-//                                ).show()
-//                            }
-//                        }
-//
-//                        (holder.itemView.context as HomeFragment).fetchData()
-//                    }
-//                }.setNegativeButton("Tidak")
-//                { p0, p1 ->
-//                    p0.dismiss()
-//                }
-//                    .setMessage("Apakah Anda Yakin ingin menghapus film ${listMovies[position].judul}")
-//                    .setTitle("Konfirmasi Hapus").create().show()
-//            }
         }
     }
 }
