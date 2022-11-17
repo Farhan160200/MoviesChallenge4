@@ -40,7 +40,7 @@
             android:id="@+id/jdl_judul"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/judul"
+            android:text="Nama Barang :"
             android:fontFamily="sans-serif-condensed"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
@@ -66,7 +66,7 @@
                 android:id="@+id/labelSinopsis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/sinopsis"
+                android:text="Deskripsi       :"
                 android:layout_marginStart="10dp"
                 android:fontFamily="sans-serif-condensed"
                 android:textColor="@color/black"
@@ -79,11 +79,11 @@
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="@string/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd"
-            android:textSize="16sp"
             android:fontFamily="sans-serif-condensed"
+            android:text="@string/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaasdasfwasasdasdasdasdasd"
             android:textAllCaps="false"
             android:textColor="@color/black"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/labelSinopsis"
             app:layout_constraintStart_toEndOf="@id/labelSinopsis"
             app:layout_constraintTop_toTopOf="@id/labelSinopsis"
@@ -93,7 +93,7 @@
             android:id="@+id/labelDurasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/durasi"
+            android:text="Harga             :"
             android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-condensed"
             android:textSize="16sp"
@@ -101,71 +101,20 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_sinopsis" />
 
+
         <TextView
             android:id="@+id/tv_durasi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:text="-"
             android:fontFamily="sans-serif-condensed"
+            android:text="-"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@id/labelDurasi"
             app:layout_constraintStart_toEndOf="@id/labelDurasi"
-            app:layout_constraintTop_toTopOf="@id/labelDurasi" />
-
-        <TextView
-            android:id="@+id/labelTahun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tahun"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelDurasi"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/tv_tahun"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/strip2"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/labelTahun"
-            app:layout_constraintStart_toEndOf="@id/labelTahun"
-            app:layout_constraintTop_toTopOf="@id/labelTahun" />
-
-        <TextView
-            android:id="@+id/labelRating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/rating2"
-            android:layout_marginStart="10dp"
-            android:textSize="16sp"
-            android:fontFamily="sans-serif-condensed"
-            android:textColor="@color/black"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelTahun"
-            tools:layout_editor_absoluteX="123dp"
-            tools:layout_editor_absoluteY="82dp" />
-
-        <TextView
-            android:id="@+id/tv_rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/strip3"
-            android:fontFamily="sans-serif-condensed"
-            android:textSize="16sp"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@id/labelRating"
-            app:layout_constraintStart_toEndOf="@id/labelRating"
-            app:layout_constraintTop_toTopOf="@id/labelRating" />
+            app:layout_constraintTop_toTopOf="@id/labelDurasi"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
             android:id="@+id/ivDelete"

@@ -1,17 +1,15 @@
-package com.farhanfarkaann.movieschallenge4.movies
+package com.farhanfarkaann.movieschallenge4.hargapasar
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.farhanfarkaann.movieschallenge4.databinding.ActivityRecyclerBinding
-import com.farhanfarkaann.movieschallenge4.fragment.HomeFragment
 
-class MoviesAdapter(
-    private val listMovies: List<MoviesData>,
-    private val update: (MoviesData) -> Unit,
-    private val delete: (MoviesData) -> Unit
-) : RecyclerView.Adapter<MoviesAdapter.ViewHolder>() {
+class HargaPasarAdapter(
+    private val listMovies: List<HargaPasarData>,
+    private val update: (HargaPasarData) -> Unit,
+    private val delete: (HargaPasarData) -> Unit
+) : RecyclerView.Adapter<HargaPasarAdapter.ViewHolder>() {
     class ViewHolder(val itemViewBinding: ActivityRecyclerBinding) : RecyclerView.ViewHolder(itemViewBinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,11 +24,11 @@ class MoviesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.itemViewBinding.apply {
-            tvJudul.text = listMovies[position].judul
-            tvDurasi.text = listMovies[position].durasi.toString() + " Menit"
-            tvSinopsis.text = listMovies[position].sinopsis
-            tvTahun.text = listMovies[position].tahun.toString()
-            tvRating.text = listMovies[position].rating.toString() + " IMDb"
+            tvJudul.text = listMovies[position].nama
+            tvDurasi.text = "Rp " + listMovies[position].harga.toString()
+            tvSinopsis.text = listMovies[position].deskripsi
+//            tvTahun.text = listMovies[position].tahun.toString()
+//            tvRating.text = listMovies[position].rating.toString() + " IMDb"
 
 
             ivEdit.setOnClickListener {

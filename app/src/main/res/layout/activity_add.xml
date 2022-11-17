@@ -7,35 +7,35 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:hint="@string/judul_film"
+        android:hint="Nama Barang"
         android:id="@+id/et_judul"
         android:textColorHint="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:hint="@string/durasi_film"
+        android:hint="Harga Barang"
         android:textColorHint="@color/black"
         android:id="@+id/et_durasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
-        android:hint="@string/sinopsis_film"
+        android:hint="Deskripsi Barang"
         android:textColorHint="@color/black"
         android:id="@+id/et_sinopsis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-    <EditText
-        android:hint="@string/tahun_film"
-        android:id="@+id/et_tahun"
-        android:textColorHint="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-    <EditText
-        android:hint="@string/rating"
-        android:id="@+id/et_rating"
-        android:textColorHint="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+<!--    <EditText-->
+<!--        android:hint="@string/tahun_film"-->
+<!--        android:id="@+id/et_tahun"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
+<!--    <EditText-->
+<!--        android:hint="@string/rating"-->
+<!--        android:id="@+id/et_rating"-->
+<!--        android:textColorHint="@color/black"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content" />-->
 
     <Button
         android:id="@+id/btnSave"

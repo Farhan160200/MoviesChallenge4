@@ -68,9 +68,6 @@ class RegistFragment : Fragment() {
                     editor.putString(CONFPASSWORD, confPassword)
                     editor.apply()
                     Toast.makeText(context, "Data Saved", Toast.LENGTH_SHORT).show()
-
-//                    val intentHomePage = Intent(this,MainActivity::class.java)
-//                    startActivity(intentHomePage)
                     findNavController().navigate(R.id.action_registFragment2_to_loginFragment)
 
                 }

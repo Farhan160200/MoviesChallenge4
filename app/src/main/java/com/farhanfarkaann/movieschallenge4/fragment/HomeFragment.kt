@@ -18,9 +18,9 @@ import com.farhanfarkaann.movieschallenge4.R
 import com.farhanfarkaann.movieschallenge4.databinding.ActivityAddBinding
 import com.farhanfarkaann.movieschallenge4.databinding.ActivityEditBinding
 import com.farhanfarkaann.movieschallenge4.databinding.FragmentHomeBinding
-import com.farhanfarkaann.movieschallenge4.movies.MoviesAdapter
-import com.farhanfarkaann.movieschallenge4.movies.MoviesData
-import com.farhanfarkaann.movieschallenge4.room.MoviesDatabase
+import com.farhanfarkaann.movieschallenge4.hargapasar.HargaPasarAdapter
+import com.farhanfarkaann.movieschallenge4.hargapasar.HargaPasarData
+import com.farhanfarkaann.movieschallenge4.room.HargaPasarDatabase
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.coroutines.*
 
@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     private var _binding : FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private var mDB : MoviesDatabase? = null
+    private var mDB : HargaPasarDatabase? = null
 
     lateinit var prefFile : SharedPreferences
 
@@ -40,12 +40,6 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(layoutInflater)
         return binding.root
 
-
-//        fabAdd.setOnClickListener {
-////            val keActivityAdd = Intent(this, AddActivity::class.java)
-////            startActivity(keActivityAdd)
-//            findNavController().navigate(R.id.action.)
-//        }
     }
     override fun onResume() {
         super.onResume()
@@ -76,7 +70,7 @@ class HomeFragment : Fragment() {
                 .setMessage("Apakah Anda Yakin ingin Logout").setTitle("Konfirmasi Logout").create().show()
         }
 
-        mDB = MoviesDatabase.getInstance(requireContext())
+        mDB = HargaPasarDatabase.getInstance(requireContext())
 
         recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         fetchData()
@@ -94,14 +88,13 @@ class HomeFragment : Fragment() {
             }
 
             dialogBinding.btnSave.setOnClickListener {
-               val  mDB = MoviesDatabase.getInstance(requireContext())
-                val objectMovies = MoviesData(
+               val  mDB = HargaPasarDatabase.getInstance(requireContext())
+                val objectMovies = HargaPasarData(
                     null,
                     dialogBinding.etJudul.text.toString(),
                     dialogBinding.etDurasi.text.toString().toInt(),
                     dialogBinding.etSinopsis.text.toString(),
-                    dialogBinding.etTahun.text.toString().toInt(),
-                    dialogBinding.etRating.text.toString().toDouble()
+
                 )
 
                 lifecycleScope.launch(Dispatchers.IO) {
@@ -109,12 +102,12 @@ class HomeFragment : Fragment() {
                     runBlocking(Dispatchers.Main) {
                         if(result != 0.toLong() ){
                             //sukses
-                            Toast.makeText(context,"Sukses menambahkan ${objectMovies.judul}",Toast.LENGTH_LONG).show()
+                            Toast.makeText(context,"Sukses menambahkan ${objectMovies.nama}",Toast.LENGTH_LONG).show()
                             fetchData()
                             dialog.dismiss()
                         }else{
                             //gagal
-                            Toast.makeText(context,"Gagal menambahkan ${objectMovies.judul}",Toast.LENGTH_LONG).show()
+                            Toast.makeText(context,"Gagal menambahkan ${objectMovies.nama}",Toast.LENGTH_LONG).show()
                             dialog.dismiss()
                         }
 
@@ -129,11 +122,11 @@ class HomeFragment : Fragment() {
             val listMovies = mDB?.moviesDao()?.getAllStudent()
             activity?.runOnUiThread {
                 listMovies?.let {
-                    val adapter = MoviesAdapter(
+                    val adapter = HargaPasarAdapter(
                         it,
                     delete = { moviesData ->
                         AlertDialog.Builder(requireContext()).setPositiveButton("Ya") { p0, p1 ->
-                            val mDb = MoviesDatabase.getInstance(requireContext())
+                            val mDb = HargaPasarDatabase.getInstance(requireContext())
 
                             GlobalScope.async {
                                 val result = mDb?.moviesDao()?.deleteStudent(moviesData)
@@ -142,13 +135,13 @@ class HomeFragment : Fragment() {
                                     if (result != 0) {
                                         Toast.makeText(
                                             requireContext(),
-                                            "Data ${moviesData.judul} berhasil dihapus",
+                                            "Data ${moviesData.nama} berhasil dihapus",
                                             Toast.LENGTH_LONG
                                         ).show()
                                     } else {
                                         Toast.makeText(
                                             requireContext(),
-                                            "Data ${moviesData.judul} Gagal dihapus",
+                                            "Data ${moviesData.nama} Gagal dihapus",
                                             Toast.LENGTH_LONG
                                         ).show()
                                     }
@@ -159,7 +152,7 @@ class HomeFragment : Fragment() {
                         { p0, p1 ->
                             p0.dismiss()
                         }
-                            .setMessage("Apakah Anda Yakin ingin menghapus film ${moviesData.judul}")
+                            .setMessage("Apakah Anda Yakin ingin menghapus film ${moviesData.nama}")
                             .setTitle("Konfirmasi Hapus")
                             .create()
                             .show()
@@ -177,38 +170,34 @@ class HomeFragment : Fragment() {
 
 
 
-                                dialogBinding.etJudul.setText(moviesData!!.judul)
+                                dialogBinding.etJudul.setText(moviesData!!.nama)
                                 dialogBinding.tvId.setText(moviesData!!.id.toString())
 
-                                dialogBinding.etDurasi.setText(moviesData!!.durasi.toString())
-                                dialogBinding.etSinopsis.setText(moviesData!!.sinopsis)
-                                dialogBinding.etTahun.setText(moviesData!!.tahun.toString())
-                                dialogBinding.etRating.setText(moviesData!!.rating.toString())
+                                dialogBinding.etDurasi.setText(moviesData!!.harga.toString())
+                                dialogBinding.etSinopsis.setText(moviesData!!.deskripsi)
 
                             dialogBinding.btnCancel.setOnClickListener {
                                 dialog.dismiss()
                             }
                             dialogBinding.btnSave.setOnClickListener {
-                                val mDb = MoviesDatabase.getInstance(requireContext())
-                                val objectMovies = MoviesData(
+                                val mDb = HargaPasarDatabase.getInstance(requireContext())
+                                val objectMovies = HargaPasarData(
 
                                     dialogBinding.tvId.text.toString().toInt(),
                                     dialogBinding.etJudul.text.toString(),
                                     dialogBinding.etDurasi.text.toString().toInt(),
                                     dialogBinding.etSinopsis.text.toString(),
-                                    dialogBinding.etTahun.text.toString().toInt(),
-                                    dialogBinding.etRating.text.toString().toDouble(),
                                 )
                                 lifecycleScope.launch(Dispatchers.IO){
                                     val result = mDb?.moviesDao()?.updateStudent(objectMovies!!)
 
                                     runBlocking (Dispatchers.Main){
                                         if(result!=0){
-                                            Toast.makeText(context,"Sukses mengubah ${objectMovies?.judul}", Toast.LENGTH_LONG).show()
+                                            Toast.makeText(context,"Sukses mengubah ${objectMovies?.nama}", Toast.LENGTH_LONG).show()
                                             fetchData()
                                             dialog.dismiss()
                                         }else{
-                                            Toast.makeText(context,"Gagal mengubah ${objectMovies?.judul}", Toast.LENGTH_LONG)
+                                            Toast.makeText(context,"Gagal mengubah ${objectMovies?.nama}", Toast.LENGTH_LONG)
                                                 .show()
                                             dialog.dismiss()
                                         }
@@ -225,7 +214,7 @@ class HomeFragment : Fragment() {
     }
     override fun onDestroy() {
         super.onDestroy()
-        MoviesDatabase.destroyInstance()
+        HargaPasarDatabase.destroyInstance()
     }
 
     override fun onDestroyView() {

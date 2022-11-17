@@ -70,11 +70,6 @@ class LoginFragment : Fragment() {
                     pass2 != password -> {
                         binding.tfPassword.error = "Password  yang anda masukan salah."
                     }
-//                email.isEmpty() -> {
-//                Toast.makeText(context, "Harap Masukan Email", Toast.LENGTH_SHORT).show()
-//                } password.isEmpty() ->{
-//                Toast.makeText(context, "Harap Masukan Password", Toast.LENGTH_SHORT).show()
-//                }
                     else -> {
                         Toast.makeText(context, "Selamat Datang $username", Toast.LENGTH_SHORT)
                             .show()
